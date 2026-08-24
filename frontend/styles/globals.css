@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #050204;
+  color: #fdfcfd;
+}
+
+/* GlassIcons vendor default is a showcase grid (multi-row, 4.5em icons,
+   large gaps) - the top bar needs a single compact row instead. */
+.topbar-glass-icons.icon-btns {
+  display: flex;
+  grid-template-columns: none;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar-glass-icons .icon-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  /* Top bar background is now fully transparent (Waves shows through), so
+     the glass icons need their own lift to stay legible over the moving
+     crimson-toned lines behind them. */
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+/* Compliance modal's flagged-items list: the spec's 450px max-height and
+   1.25rem item gap differ from AnimatedList's vendor default (400px, and
+   the 0.75rem set inline on AnimatedItem for the upload page's file list) -
+   overridden here since AnimatedItem's per-item spacing is a shared inline
+   style, not something callers can pass per-usage. */
+.compliance-list .scroll-list {
+  max-height: 450px;
+  padding: 0;
+}
+
+.compliance-list .scroll-list > div {
+  margin-bottom: 1.25rem !important;
+}

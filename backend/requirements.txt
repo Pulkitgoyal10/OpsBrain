@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+tiktoken
+pymupdf
+pdfplumber
+cohere
+qdrant-client
+groq
+neo4j
+python-multipart
+openpyxl
+requests
+Pillow
+ezdxf
+pytest
